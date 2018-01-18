@@ -8,16 +8,18 @@ namespace Metaproject.PackageIndex.Structures.PackageProject
 {
     public class PackageCsproj
     {
-        public PackageCsproj(string name, string description, string version, List<NuGetReference> packageReferences)
+        public PackageCsproj(string name, string description, string packageId, string version, List<NuGetReference> packageReferences)
         {
             Description = description;
             Name = name;
+            PackageId = packageId;
             PackageReferences = packageReferences;
             Version = version;
         }
 
         public string Description { get; set; }
         public string Name { get; set; }
+        public string PackageId { get; set; }
         public string Version { get; set; }
 
         public List<NuGetReference> PackageReferences { get; set; }
@@ -25,6 +27,6 @@ namespace Metaproject.PackageIndex.Structures.PackageProject
         public Project GetProject()
             => Create(Name,
                 PackageReferences,
-                nuGetPackageInfo: PackageInfo(Name, Description, Version));
+                nuGetPackageInfo: PackageInfo(PackageId, Description, Version));
     }
 }

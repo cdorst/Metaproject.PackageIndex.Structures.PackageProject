@@ -10,7 +10,7 @@
     <Description>Structure for package-project .csproj files</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>CDorst.Metaproject.PackageIndex.Structures.PackageProject</PackageId>
-    <Version>1.0.0</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
